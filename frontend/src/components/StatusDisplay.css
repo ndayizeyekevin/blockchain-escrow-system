@@ -1,0 +1,237 @@
+/* StatusDisplay Component Styles */
+
+.status-display {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.section-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-container h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.empty-icon {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Timeline Styles */
+.status-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-step {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.timeline-step.completed {
+  background: #f0f7ff;
+  border-color: #667eea;
+}
+
+.timeline-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e9ecef;
+  color: #666;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.timeline-step.completed .timeline-marker {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.timeline-content h4 {
+  margin: 0 0 0.25rem 0;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Status Card */
+.status-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #6c757d;
+  overflow: hidden;
+}
+
+.status-card.status-pending {
+  border-left-color: #ffc107;
+  background: #fffbf0;
+}
+
+.status-card.status-submitted {
+  border-left-color: #17a2b8;
+  background: #f0f8fb;
+}
+
+.status-card.status-approved {
+  border-left-color: #28a745;
+  background: #f0fdf4;
+}
+
+.status-card.status-completed {
+  border-left-color: #20c997;
+  background: #ecfdf5;
+}
+
+.status-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.status-pending .status-badge {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-submitted .status-badge {
+  background: #cfe2ff;
+  color: #084298;
+}
+
+.status-approved .status-badge {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-completed .status-badge {
+  background: #d1f2eb;
+  color: #0f5342;
+}
+
+.status-details {
+  padding: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.detail-value {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.detail-value.monospace {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+.detail-value.highlight {
+  color: #667eea;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.detail-value.success {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.detail-value.pending {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 1.5rem;
+  }
+
+  .section-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .status-timeline {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .detail-label {
+    margin-bottom: 0.25rem;
+  }
+}
